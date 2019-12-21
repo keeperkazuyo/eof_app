@@ -1,0 +1,17 @@
+<div class="main">
+    <h2>試合結果入力</h2>
+    <%= form_tag("/input/result") do %>
+        <p>大会名は？</p>
+        <input name="event_name" value="<%= @event_name %>" >
+        <p>試合順は？</p>
+        <input name="match_order" >
+        
+        <h3>どっちが勝った？</h3>
+        <select name="result">
+        <option value="r">赤コーナー</option>
+        <option value="b">青コーナー</option>
+        </select>
+        <input type="submit" value="登録する">
+    <% end %>
+    <%= link_to("イベント入力ページへ", "/input/event") %>
+</div>

@@ -1,0 +1,26 @@
+<div class="main">
+    <h1>ランキング</h1>
+    <table class="ranking">
+      <thead>
+        <tr>
+          <th>順位</th>
+          <th>ユーザー名</th>
+          <th>ポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @points.first(30).each_with_index do |point, i| %>
+        <% user=User.find_by(nickname: point.first ) %>
+        <% if user %>
+          <tr>
+            <td><%= i + 1 %>位</td>
+              <td><%=link_to(user.name, "/#{point.first}") %></td>
+            <td><%=point.second %></td>
+          </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+        

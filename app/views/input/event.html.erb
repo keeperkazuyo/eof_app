@@ -1,0 +1,34 @@
+<div class="main">
+    <h2>イベント作成</h2>
+    <%= form_tag("/input/event/create") do %>
+        <p>イベントタイプは？</p>
+        <select name="event_type">
+        <option value="ufc">ufc</option>
+        <option value="rizin">rizin</option>
+        <option value="k-1">k-1</option>
+        <option value="bellator">bellator</option>
+        <option value="rise">rise</option>
+        </select>
+        <p>大会名は？</p>
+        <input name="event_name" value="<%= @event_name %>">
+        <p>いつ？</p>
+        <input type="datetime-local" name="event_date" value="<%= @event_date %>">
+        <p>場所は？</p>
+        <input name="event_place" value="<%= @event_place %>">
+        <p>試合順は？</p>
+        <input name="match_order" value="<%= @match_order %>">
+        <p>階級は？</p>
+        <input name="match_class" >
+        <p>赤コーナーは？</p>
+        <input name="fighter_r" >
+        <p>青コーナーは？</p>
+        <input name="fighter_b" >
+        <input type="submit" value="登録する"> 
+    <% end %>
+    </br>
+    
+    <%= link_to("結果入力ページへ", "/input/result") %>
+    <%= link_to("イベント編集ページへ", "/input/edit") %>
+</div>
+
+    

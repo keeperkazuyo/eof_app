@@ -1,0 +1,31 @@
+// Place all the styles related to the ranking controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.ranking {
+    width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+table.ranking th,td {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+
+}
+
+
+@media(max-width:670px){
+    table.ranking {
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    
+    
+    table.ranking th,td {
+        max-width: 33%;
+        height: 30px;
+        line-height: 30px;
+    }
+}

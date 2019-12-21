@@ -1,0 +1,71 @@
+<div class="main">
+    <h2>対戦相手を変更する</h2>
+    <%= form_tag("/input/edit_match") do %>
+        <p>大会名は？</p>
+        <input name="event_name" value="<%= @event_name %>" >
+        <p>試合順は？</p>
+        <input name="match_order" value="<%= @match_order %>" >
+        
+        <h3>どこを変更する？</h3>
+        <p>階級は？</p>
+        <input name="match_class" value="<%= @match_class %>" >
+        <p>赤コーナーは？</p>
+        <input name="fighter_r" value="<%= @fighter_r %>">
+        <p>青コーナーは？</p>
+        <input name="fighter_b" value="<%= @fighter_b %>">
+        <input type="submit" value="変更する">
+    <% end %>
+    </br>
+    </br>
+    <h2>試合順を変更する</h2>
+    <%= form_tag("/input/edit_order") do %>
+        <p>大会名は？</p>
+        <input  name="event_name" value="<%= @event_name %>" >
+        <p>もともとの試合順は？</p>
+        <input name="match_order" value="<%= @match_order %>">
+        
+        <h3>試合順はどうなる？</h3>
+        <p>新しい試合順は？</p>
+        <input name="edit_order" value="<%= @edit_order %>">
+        <input type="submit" value="変更する">
+    <% end %>
+    </br>
+    </br>
+    <h2>大会名を変更する</h2>
+    <%= form_tag("/input/edit_event_name") do %>
+        <p>大会名は？</p>
+        <input name="event_name" value="<%= @event_name %>" >
+        
+        <h3>大会名はどうなる？</h3>
+        <p>新しい大会名は？</p>
+        <input name="edit_name" value="<%= @edit_name  %>">
+        <input type="submit" value="変更する">
+    <% end %>
+    </br>
+    </br>
+    <h2>その他の変更する</h2>
+    <%= form_tag("/input/edit_other") do %>
+        <p>大会名は？</p>
+        <input  name="event_name" value="<%= @event_name %>" >
+        
+        <h3>どこを変更する？</h3>
+        <p>いつになる？</p>
+        <input type="datetime-local" name="event_date" value="<%= @event_date  %>">
+        <p>どこになる？</p>
+        <input name="event_place" value="<%= @event_place  %>">
+        <p>イベントタイプは？</p>
+        <input name="event_type" value="<%= @event_type  %>">
+        <input type="submit" value="変更する">
+    <% end %>
+    </br>
+    </br>
+    <h2>イベントを削除する</h2>
+    <%= form_tag("/input/destroy") do %>
+        <p>大会名は？</p>
+        <input  name="event_name" >
+        <input type="submit" value="削除する">
+    <% end %>
+    </br>
+    <%= link_to("結果入力ページへ", "/input/result") %>
+    <%= link_to("イベント入力ページへ", "/input/event") %>
+</div>

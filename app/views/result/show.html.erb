@@ -1,0 +1,37 @@
+<div class="main">
+    <% if @result.event_type == "rizin" %>
+        <h2><%= @result.event_name.upcase.gsub(/-/,'.') %></h2>
+    <% else %>
+        <h2><%= @result.event_name.upcase %></h2>
+    <% end %>
+    <h3><%= @result.event_date.to_s(:event_date) %></h3>
+    
+    <% @results.each do |result| %>
+        
+        <%= result.match_class %>
+        <div class="event-details">
+            <% cheer1 = Cheer.where(event_name: result.event_name, match_order: result.match_order ,which_cheer:"r") %>
+            <% cheer2 = Cheer.where(event_name: result.event_name, match_order: result.match_order ,which_cheer:"b") %>
+            
+            <div class= "details-flex">    
+                <p><%= result.fighter_r %>(<%=cheer1.count %>)</p>
+                <p><%= result.fighter_b %>(<%=cheer2.count %>)</p>
+            </div>
+            <div class="chart-position">
+            <%= bar_chart @data = [
+                  { data:[ ["割合", cheer1.count]]},
+                  { data:[ ["割合", cheer2.count]]}], 
+                  adapter: 'google', library: { isStacked: 'percent' } %>
+                <% if result.result == "r" %>
+                    <p align = "left",font-color="red"><strong>WINNER</strong></p>
+                <% end %>
+                <% if result.result == "b" %>
+                    <p align = "right",font-color="red"><strong>WINNER</strong></p>
+                <% end %>
+                
+            </div>
+        
+        </div>
+    <% end %>
+</div>
+ 

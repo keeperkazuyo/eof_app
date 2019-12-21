@@ -1,0 +1,15 @@
+<div class="main">
+    <h1>マイページ</h1>
+    <div class= "edit_user_form">
+        <h2>ユーザー名を変更する</h2>
+        
+        <%= form_tag("/#{current_user.nickname}/update_user") do %>
+            <dl>
+                <dt>新しい名前は？</dt>
+                <dd><input name="name" value="<%=current_user.name%>"></dd>
+            </dl>
+            
+            <input type="submit" value="変更する">
+        <% end %>
+    </div>
+</div>

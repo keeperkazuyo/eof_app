@@ -1,0 +1,12 @@
+
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+  <div class ="login-btn">
+  <%= link_to  omniauth_authorize_path(resource_name, provider) do %>
+  <span class="fa fa-twitter"></span><%="#{OmniAuth::Utils.camelize(provider)}"%>でログインする<% end %>
+  </div>
+  <% end %>
+<% end %>
+
+

@@ -1,0 +1,65 @@
+<div class="main">
+    <h1><%= @event.event_type.upcase %></h1>
+    <% @events.each do |event| %>
+        <div class="event-contents">
+            <%= link_to("/event/#{event.event_type}/#{event.event_name}") do %>
+                <div class="contents-flex">
+                    <% if event.event_type == "rizin" %>
+                        <div class ="event-contents-position">
+                            <div class="ribbon-content">
+                                <span class="ribbon-r"><%= event.event_type.upcase %></span>
+                            </div>
+                            <div class="logo"><div class="rizin-logo"></div></div>
+                        </div>
+                        <div class ="event-contents-position">
+                            <h2><%= event.event_name.upcase.gsub(/-/, '.') %></h2>
+                            <p><%= event.event_date.to_s(:event_date) %></p>
+                            <p><%= event.fighter_r%> VS. <%=event.fighter_b %></p>
+                            
+                        </div>
+                    <% elsif event.event_type == "k-1" %>
+                        <div class ="event-contents-position">
+                            <div class="ribbon-content">
+                                <span class="ribbon-k"><%= event.event_type.upcase %></span>
+                            </div>
+                            <div class="logo"><div class="k1-logo"></div></div>
+                        </div>
+                        <div class ="event-contents-position">
+                            <h2><%= event.event_name.upcase %></h2>
+                            <p><%= event.event_date.to_s(:event_date) %></p>
+                            <p><%= event.fighter_r%> VS. <%=event.fighter_b %></p>
+                            
+                        </div>
+                    <% elsif event.event_type == "bellator" %>
+                        <div class ="event-contents-position">
+                            <div class="ribbon-content">
+                                <span class="ribbon-b"><%= event.event_type.upcase %></span>
+                            </div>
+                            <div class="logo"><div class="bellator-logo"></div></div>
+                        </div>
+                        <div class ="event-contents-position">
+                            <h2><%= event.event_name.upcase %></h2>
+                            <p><%= event.event_date.to_s(:event_date) %></p>
+                            <p><%= event.fighter_r%> VS. <%=event.fighter_b %></p>
+                            
+                        </div>
+                    <% else  %>
+                        <div class ="event-contents-position">
+                            <div class="ribbon-content">
+                                <span class="ribbon-u"><%= event.event_type.upcase %></span>
+                            </div>
+                            <div class="logo"><div class="ufc-logo"></div></div>
+                            </div>
+                        <div class ="event-contents-position">
+                            <h2><%= event.event_name.upcase %></h2>
+                            <p><%= event.event_date.to_s(:event_date) %></p>
+                            <p><%= event.fighter_r%> VS. <%=event.fighter_b %></p>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+    <%= paginate @events %>
+</div>
+        

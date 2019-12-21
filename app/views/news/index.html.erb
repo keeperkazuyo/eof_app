@@ -1,0 +1,12 @@
+<div class="main">
+    <h1>ニュース</h1>
+    <% @news.each do |news| %>
+        <%= link_to("/news/#{news.posting_time}") do %>
+            <div class="event-contents">
+                <h2><%= news.title %></h2>
+                <p style="font-size:13px;"><%= news.created_at.to_s(:event_date) %></p>
+            </div>
+        <% end %>
+    <% end %>
+    <%= paginate @news %>
+</div>

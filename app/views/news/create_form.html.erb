@@ -1,0 +1,23 @@
+<div class="main">
+    <h1>ニュース入力</h1>
+    <div class="event-contents">
+        <div class="news-input">
+            <%= form_tag("/news/create",{multipart: true}) do %>
+                <dl>
+                    <dt>タイトル</dt>
+                    <dd><input name="title"></dd>
+                </dl>
+                <dl>
+                    <dt>本文</dt>
+                    <dd><textarea name="content"></textarea></dd>
+                </dl>
+                <dl>
+                    <dt>画像</dt>
+                    <dd><input name="image" type="file"></dd>
+                </dl>
+                </br>
+                <input type="submit" value="送信する">
+            <% end %>        
+        </div>
+    </div>
+</div>

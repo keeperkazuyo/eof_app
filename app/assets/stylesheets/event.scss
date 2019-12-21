@@ -1,0 +1,334 @@
+/*event共通*/
+
+
+
+.event-contents {
+  display: block;
+  position: relative;
+  margin: 15px auto;
+  width: 100%;
+  padding: 15px 0;
+  background: #f1f1f1;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14);
+  transition: .4s;
+}
+
+.event-contents:hover {
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25)
+}
+
+
+.event-contents h2 {
+ text-align: center;
+ margin: 5px 0 10px 0 ;
+ transition: .4s;
+}
+
+.event-contents h2:hover {
+ opacity: 0.5;
+}
+ 
+ 
+.event-contents p {
+ text-align: center;
+ margin: 5px 0;
+ transition: .4s;
+}
+.event-contents p a {
+  color: #333;
+}
+
+.event-contents p:hover {
+  opacity: 0.5;
+}
+
+.logo {
+  overflow: hidden;
+}
+
+.ribbon-content {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 89px;
+  height: 91px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+
+/*-------RIZIN------------*/
+
+
+.ribbon-r {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  right: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #E60012;
+  color: #fff;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-r:before, .ribbon-r:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #8c000b;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+
+.ribbon-r:before {
+  left: 19px;
+}
+
+.ribbon-r:after {
+  right: 13px;
+}
+
+.rizin-logo {
+  background-image: url("/rizin-logo.png");
+  width: 200px;
+  height:  160px;
+  background-position: center;
+}
+
+/*-------RIZIN終わり------------*/
+/*-------k-1------------*/
+.ribbon-k {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  right: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #292929;
+  color: #fff;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-k:before, .ribbon-k:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #121212;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+
+.ribbon-k:before {
+  left: 19px;
+}
+
+.ribbon-k:after {
+  right: 13px;
+}
+
+.k1-logo {
+  background-image: url("/k1-logo.png");
+  background-position: center;
+  width: 200px;
+  height: 160px;
+}
+
+/*-------k-1終わり------------*/
+/*-------bellator------------*/
+
+.ribbon-b {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  right: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #fff;
+  color: #000;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-b:before, .ribbon-b:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #919191;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+
+.ribbon-b:before {
+  left: 19px;
+}
+
+.ribbon-b:after {
+  right: 13px;
+}
+
+.bellator-logo {
+  background-image: url("/bellator-logo.png");
+  background-position: center;
+  width: 200px;
+  height: 160px;
+
+}
+
+/*-------bellator終わり------------*/
+/*-------ufc------------*/
+
+.ribbon-u {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  right: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #ffa520;
+  color: #fff;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-u:before, .ribbon-u:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #b2751b;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+
+.ribbon-u:before {
+  left: 19px;
+}
+
+.ribbon-u:after {
+  right: 13px;
+}
+
+.ufc-logo {
+  background-image: url("/ufc-logo.png");
+  background-position: center;
+  width: 200px;
+  height: 160px;
+
+}
+
+/*-------ufc終わり------------*/
+
+.event-details {
+  margin: 15px auto;
+  padding: 5px 20px;
+  width: 100%;
+  height: 240px;
+  background: #f1f1f1;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14);
+  
+}
+.chart-position {
+  margin: 0 auto;
+}
+
+.details-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  transition: .4s;
+}
+
+.torikeshi a{
+  transition: .4s;
+  color: #383b35;
+}
+.torikeshi a:hover {
+  opacity: 0.5;
+}
+
+.btn-center {
+  margin: 0 auto;
+}
+
+.event-contents-position {
+  display: block;
+  max-width: 50%;
+}
+
+
+
+
+
+
+/*-------レスポンシブ------------*/
+
+@media(max-width:1100px){
+  .event-main {
+    width: 100%;
+  }
+
+  
+}
+
+
+@media(max-width:670px){
+  
+
+  .logo {
+    margin-left: 5px;
+  }
+  
+  
+  .rizin-logo, .k1-logo, .ufc-logo, .bellator-logo {
+    width: 140px;
+    height: 112px;
+  }
+  .event-contents {
+    padding: 5px 0;
+
+  }
+  .event-contents h2{
+    font-size: 20px;
+    margin: 5px;
+  }
+  
+  .details-flex p {
+    margin: 0 3px;
+  }
+  
+  .event-contents-position h2 {
+  font-size: 18px;
+  
+  }
+  
+  .event-contents-position p {
+    font-size: 13px;
+  
+  }
+  
+
+  
+}

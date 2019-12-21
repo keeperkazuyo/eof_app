@@ -1,0 +1,18 @@
+<div class="main">
+    <h1>個人ページ</h1>
+    <div class="mypage-flex">
+        <img src="<%=@user.image%>"/>
+        <h2><%=@user.name%></h2>
+    </div>
+    <p><span style="font-size:30px"><%= @which_cheer %>回</span>応援して、<span style="font-size:30px;color:red;"><%= @point %>回</span>応援した選手が勝利しています。</p>
+    <div class="btn"><%= link_to("ランキングを見る","/ranking") %></div>
+    <% if user_signed_in? %>
+        <% if @user.id == current_user.id %>
+            <div class="changename_btn">
+                <%= link_to("名前を変更する", "/#{@user.nickname}/edit_user") %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+

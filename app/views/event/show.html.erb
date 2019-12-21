@@ -1,0 +1,45 @@
+<div class="main">
+    <% if @event.event_type == "rizin" %>
+        <h2><%= @event.event_name.upcase.gsub(/-/,'.') %></h2>
+    <% else %>
+        <h2><%= @event.event_name.upcase %></h2>
+    <% end %>
+    <h3><%= @event.event_date.to_s(:event_date) %></h3>
+    <% @events.each do |event| %>
+        <%= event.match_class %>
+        <div class="event-details">
+            <% cheer1 = Cheer.where(event_name: event.event_name, match_order: event.match_order ,which_cheer:"r") %>
+            <% cheer2 = Cheer.where(event_name: event.event_name, match_order: event.match_order ,which_cheer:"b") %>
+            <div class= "details-flex">    
+                <p><%= event.fighter_r %>(<%=cheer1.count %>)</p>
+                <p><%= event.fighter_b %>(<%=cheer2.count %>)</p>
+            </div>
+            <div class="chart-position">
+            <%= bar_chart @data = [
+                  { data:[ ["割合", cheer1.count]]},
+                  { data:[ ["割合", cheer2.count]]}], 
+                  adapter: 'google', library: { isStacked: 'percent' } %>
+            </div>
+            <div class= "details-flex">
+                <% if user_signed_in? %>
+                    <% if Cheer.find_by(user_id: current_user.id, event_name: event.event_name, match_order: event.match_order) %>
+                        <div class="torikeshi">
+                            <%= link_to("応援済み（応援を取り消す）","/event/#{event.event_name}/#{event.match_order}/destroy",{method: "post"}) %>
+                        </div>
+                    <% else %>
+                        <div class="btn">
+                            <%= link_to("応援する","/event/#{event.event_name}/#{event.match_order}/create_r",{method: "post"}) %>
+                        </div>
+                        <div class="btn">
+                            <%= link_to("応援する","/event/#{event.event_name}/#{event.match_order}/create_b",{method: "post"}) %>
+                        </div>
+                    <% end %>
+                <% else %>
+                    <div class="btn-center"><div class="btn"><%= link_to("ログインして応援する","/users/sign_in") %></div></div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>
+        
+        

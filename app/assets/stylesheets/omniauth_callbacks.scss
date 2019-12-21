@@ -1,0 +1,30 @@
+// Place all the styles related to the omniauth_callbacks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-btn  {
+    
+    border-radius: 7px;/*角丸に*/
+    display: inline-block;
+    height: 50px;/*高さ*/
+    width: 190px;/*幅*/
+    text-align: center;/*中身を中央寄せ*/
+    font-size: 15px;/*文字のサイズ*/
+    line-height: 50px;/*高さと合わせる*/
+    background: #1da1f3;
+    overflow: hidden;/*はみ出た部分を隠す*/
+}
+.login-btn  .fa-twitter  {
+    text-shadow: 2px 2px 0px #4287d6;
+}
+
+.login-btn a {
+    color: #FFF;/*文字・アイコン色*/
+    display:inline-block;
+    transition: .5s;
+}
+
+.login-btn a:hover  {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+}

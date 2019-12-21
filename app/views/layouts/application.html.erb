@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>FIST CLUB（フィストクラブ）|格闘技ファンサイト</title>
+    <meta name="description" content="総合格闘技やキックボクシングなどの勝敗を予想しよう！ランキングで上位を目指そう！" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body ontouchstart="">
+    <header>
+      <div class="container">
+        <div class="header-flex">
+          <div class="header-title">
+            <%= link_to(image_tag("/fist_club-logo.png"), "/", class: "header-image")  %>
+          </div>
+        
+          <div class="header-menus">
+            <ul>
+              <%= link_to("/event/rizin") do %><li>RIZIN</li><% end %>
+              <%= link_to("/event/ufc") do %><li>UFC</li><% end %>
+              <%= link_to("/event/k-1") do %><li>K-1</li><% end %>
+              <%= link_to("/event/bellator") do %><li>BELLATOR</li><% end %>
+              <%= link_to("/ranking") do %><li>ランキング</li><% end %>
+              <%= link_to("/result") do %><li>試合結果</li><% end %>
+              <%if user_signed_in? %>
+                <%= link_to("/#{current_user.nickname}") do %><li>マイページ</li><% end %>
+                <%= link_to(destroy_user_session_path, {method: "delete"}) do %><li>ログアウト</li><% end %>
+              <% else %>
+                <%= link_to("/users/sign_in") do %><li><span class="fa fa-twitter"></span>ログイン</li><% end %>
+              <% end %>
+            </ul>
+          </div>
+          <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+              <nav class="global-nav">
+                <h3>MENU</h3>
+                <ul>
+                  <%= link_to("/event/rizin") do %><li>RIZIN</li><% end %>
+                  <%= link_to("/event/ufc") do %><li>UFC</li><% end %>
+                  <%= link_to("/event/k-1") do %><li>K-1</li><% end %>
+                  <%= link_to("/event/bellator") do %><li>BELLATOR</li><% end %>
+                  <%= link_to("/ranking") do %><li>ランキング</li><% end %>
+                  <%= link_to("/result") do %><li>試合結果</li><% end %>
+                  <%if user_signed_in? %>
+                    <%= link_to("/#{current_user.nickname}") do %><li>マイページ</li><% end %>
+                    <%= link_to(destroy_user_session_path, {method: "delete"}) do %><li>ログアウト</li><% end %>
+                  <% else %>
+                    <%= link_to(new_user_session_path) do %><li><span class="fa fa-twitter"></span>ログイン</li><% end %>
+                  <% end %>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="flash">
+      <% if flash[:notice] %>
+        <div class="notice"><%= notice %></div>
+      <% end %>
+    </div>
+    <div class="flash">
+      <% if flash[:alert] %>
+        <div class="alert"><%= alert %></div>
+      <% end %>
+    </div>
+    <div class="background-image">
+      <div class="container">
+        <div class="main-flex">
+          
+      <%= yield %>
+      
+      <div class="sidebar">
+            <h2>ルール</h2>
+            <ul>
+                <li>まずはtwitterアカウントで<%=link_to("ログイン", "/users/sign_in") %>！</li>
+                <li>イベント予定からきになるイベントをチェック！</li>
+                <li>好きな選手を応援しよう！</li>
+                <li>応援できるのは大会が始まる前まで。</li>
+                <li>応援した選手が勝利した場合は１ポイントGET！</li>
+                <li>たくさん応援してランキング上位を目指そう！</li>
+            </ul>
+            <h2>Twitter</h2>
+            <div class="twitter-timeline">
+                <a class="twitter-timeline" data-lang="ja" data-width="280" data-height="400" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/fist_club2019?ref_src=twsrc%5Etfw">Tweets by fist_club2019</a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <div class="fixed-btn">
+      <div class="sns-btn">
+        <%= link_to "https://twitter.com/share?url=#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'Twitter', target: '_blank' do %>
+        <span class="fa fa-twitter"></span>
+        <% end %>
+      </div>
+      <div class="sns-btn">
+      <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'LINE', target: '_blank' do %>
+        <p>LINE</p>
+        <% end %>
+      </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-contents">
+          <p><%= link_to("お問い合わせ", "/contacts") %></p>
+          <p><%= link_to("プライバシーポリシー", "/privacy_policy") %></p>
+        </div>
+        <div class="copyright">
+          <p>Copyright©FIST CLUB　All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

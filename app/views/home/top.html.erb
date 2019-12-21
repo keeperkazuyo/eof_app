@@ -1,0 +1,85 @@
+<div class="main">
+    <div class="contents-flex">
+        <div class="main-contents">
+            <h2>イベント予定</h2>
+            <% @events.first(3).each do |event| %>
+                <%= link_to("/event/#{event.event_type}/#{event.event_name}") do %>
+                    <div class="child-contents">
+                        <% if event.event_type == "rizin" %>
+                            <h3><%= event.event_type.upcase %></h3>
+                            <p><%= event.event_name.upcase.gsub(/-/, '.') %></p>
+                        <% else %>
+                            <h3><%= event.event_type.upcase %></h3>
+                            <p><%= event.event_name.upcase %></p>
+                        <% end %>
+                        <p><%= event.event_date.to_s(:event_date) %></p>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="more-read">
+                <%= link_to("もっと見る","/event") %>
+            </div>
+        </div>
+        <div class="main-contents">
+            <h2>イベント結果</h2>
+            <% @results.first(3).each do |result| %>
+                <%= link_to("/result/#{result.event_type}/#{result.event_name}") do %>
+                    <div class="child-contents">
+                        <% if result.event_type == "rizin" %>
+                            <h3><%= result.event_type.upcase %></h3>
+                            <p><%= result.event_name.upcase.gsub(/-/, '.') %></p>
+                        <% else %>
+                            <h3><%= result.event_type.upcase %></h3>
+                            <p><%= result.event_name.upcase %></p>
+                        <% end %>
+                        <p><%= result.event_date.to_s(:event_date) %></p>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="more-read">
+                <%= link_to("もっと見る", "/result") %>
+            </div>
+        </div>
+        <div class="main-contents">
+            <h2>ランキング</h2>
+                <table class="top-ranking">
+                  <thead>
+                    <tr>
+                      <th>順位</th>
+                      <th>ユーザー名</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @points.first(5).each_with_index do |point, i| %>
+                    <% user=User.find_by(nickname: point.first ) %>
+                    <%if user %>
+                      <tr>
+                        <td><%= i + 1 %>位</td>
+                        <td><%=user.name %></td>
+                      </tr>
+                      <% end %>
+                    <% end %>
+                  </tbody>
+                </table>
+                <div class="more-read">
+                    <%= link_to("もっと見る", "/ranking") %>
+                </div>
+            
+        </div>
+        <div class="main-contents">
+            <h2>ニュース</h2>
+            <% @news.first(3).each do |news| %>
+                <%= link_to("/news/#{news.posting_time}") do %>
+                    <div class="child-contents-news">
+                        
+                        <p><%= news.title %></p>
+                    
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="more-read">
+                <%= link_to("もっと見る", "/news") %>
+            </div>
+        </div>
+    </div>
+</div>
