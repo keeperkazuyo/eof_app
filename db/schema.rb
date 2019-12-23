@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_12_16_023203) do
 
-  create_table "cheers", force: :cascade do |t|
+  create_table "cheers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.string "event_name"
     t.integer "match_order"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_023203) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "event_type"
     t.string "event_name"
     t.datetime "event_date"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_023203) do
     t.string "result"
   end
 
-  create_table "news", force: :cascade do |t|
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "image_name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_023203) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
