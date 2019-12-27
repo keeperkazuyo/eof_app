@@ -30,5 +30,5 @@ test:
 production:
   <<: *default
   database: eof_app_production
-  username: user_production
-  password: pass_production
+  username: root
+  password: apricoT.717
