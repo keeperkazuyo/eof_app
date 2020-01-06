@@ -56,6 +56,9 @@ gem 'chartkick'
 
 gem 'jquery-rails'
 
+gem 'google-analytics-rails'
+#アナリティクス設置
+
 #アプリケーションサーバー
 group :production, :staging do
     gem 'unicorn'
