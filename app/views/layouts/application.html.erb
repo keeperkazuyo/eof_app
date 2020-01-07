@@ -36,7 +36,7 @@
               <%= link_to("/result") do %><li>試合結果</li><% end %>
               <%if user_signed_in? %>
                 <%= link_to("/#{current_user.nickname}") do %><li>マイページ</li><% end %>
-                <%= link_to(sign_out_path) do %><li>ログアウト</li><% end %>
+                <%= link_to(destroy_user_session_path, method: :delete) do %><li>ログアウト</li><% end %>
               <% else %>
                 <%= link_to("/users/sign_in") do %><li><span class="fa fa-twitter"></span>ログイン</li><% end %>
               <% end %>
@@ -58,7 +58,7 @@
                   <%= link_to("/result") do %><li>試合結果</li><% end %>
                   <%if user_signed_in? %>
                     <%= link_to("/#{current_user.nickname}") do %><li>マイページ</li><% end %>
-                    <%= link_to(sign_out_path) do %><li>ログアウト</li><% end %>
+                    <%= link_to(destroy_user_session_path, method: :delete) do %><li>ログアウト</li><% end %>
                   <% else %>
                     <%= link_to(new_user_session_path) do %><li><span class="fa fa-twitter"></span>ログイン</li><% end %>
                   <% end %>
