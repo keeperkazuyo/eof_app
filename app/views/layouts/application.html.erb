@@ -13,8 +13,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fist_club2019" /> 
+    <meta property="og:url" content=<%= request.url %> />
+    <meta property="og:title" content="FIST CLUB（フィストクラブ）|格闘技ファンサイト" />
+    <meta property="og:description" content="総合格闘技やキックボクシングなどの勝敗を予想しよう!" />
+    <meta property="og:image" content="http://f-ist.club/public/fist_club2019-logo.jpg" />
 
     <%= favicon_link_tag(source='/favicon.ico')  %>
+    
+    <%= analytics_init if Rails.env.production? %>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
@@ -83,30 +93,30 @@
       <div class="container">
         <div class="main-flex">
           
-      <%= yield %>
+          <%= yield %>
       
-      <div class="sidebar">
+          <div class="sidebar">
             <h2>ルール</h2>
-            <ul>
-                <li>まずはtwitterアカウントで<%=link_to("ログイン", "/users/sign_in") %>！</li>
-                <li>イベント予定からきになるイベントをチェック！</li>
-                <li>好きな選手を応援しよう！</li>
-                <li>応援できるのは大会が始まる前まで。</li>
-                <li>応援した選手が勝利した場合は１ポイントGET！</li>
-                <li>たくさん応援してランキング上位を目指そう！</li>
-            </ul>
+              <ul>
+                  <li>まずはtwitterアカウントで<%=link_to("ログイン", "/users/sign_in") %>！</li>
+                  <li>イベント予定からきになるイベントをチェック！</li>
+                  <li>好きな選手を応援しよう！</li>
+                  <li>応援できるのは大会が始まる前まで。</li>
+                  <li>応援した選手が勝利した場合は１ポイントGET！</li>
+                  <li>たくさん応援してランキング上位を目指そう！</li>
+              </ul>
             <h2>Twitter</h2>
             <div class="twitter-timeline">
                 <a class="twitter-timeline" data-lang="ja" data-width="280" data-height="400" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/fist_club2019?ref_src=twsrc%5Etfw">Tweets by fist_club2019</a> 
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
 
-      <div class="fixed-btn">
+    <div class="fixed-btn">
       <div class="sns-btn">
         <%= link_to "https://twitter.com/share?url=#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'Twitter', target: '_blank' do %>
         <span class="fa fa-twitter"></span>
@@ -116,7 +126,6 @@
       <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'LINE', target: '_blank' do %>
         <p>LINE</p>
         <% end %>
-      </div>
       </div>
     </div>
     <footer>
