@@ -147,6 +147,52 @@
 }
 
 /*-------k-1終わり------------*/
+/*-------rise------------*/
+
+.ribbon-r {
+  display: inline-block;
+  position: absolute;
+  padding: 7px 0;
+  right: -23px;
+  top: 22px;
+  width: 160px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  background: #fff;
+  color: #c0c0c0;
+  letter-spacing: 0.05em;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-r:before, .ribbon-r:after {
+  position: absolute;
+  content: "";
+  border-top: 4px solid #919191;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  bottom: -4px;
+}
+
+.ribbon-r:before {
+  left: 19px;
+}
+
+.ribbon-r:after {
+  right: 13px;
+}
+
+.rise-logo {
+  background-image: url("/rise-logo.png");
+  background-position: center;
+  width: 200px;
+  height: 160px;
+
+}
+
+/*-------rise終わり------------*/
 /*-------bellator------------*/
 
 .ribbon-b {
@@ -302,7 +348,7 @@
   }
   
   
-  .rizin-logo, .k1-logo, .ufc-logo, .bellator-logo {
+  .rizin-logo, .k1-logo, .ufc-logo, .bellator-logo, .rise-logo {
     width: 140px;
     height: 112px;
   }

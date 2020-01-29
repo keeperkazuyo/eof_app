@@ -31,6 +31,19 @@
                     <p><%= event.fighter_r%> VS.<%=event.fighter_b %></p>
                     
                 </div>
+                <% elsif event.event_type == "rise" %>
+                <div class ="event-contents-position">
+                    <div class="ribbon-content">
+                        <span class="ribbon-r"><%= event.event_type.upcase %></span>
+                    </div>
+                    <div class="logo"><div class="rise-logo"></div></div>
+                </div>
+                <div class ="event-contents-position">
+                    <h2><%=event.event_name.upcase %></h2>
+                    <p><%=event.event_date.to_s(:event_date) %></p>
+                    <p><%=event.fighter_r%> VS. <%=event.fighter_b %></p>
+                    
+                </div>
                 <% elsif event.event_type == "bellator" %>
                 <div class ="event-contents-position">
                     <div class="ribbon-content">
