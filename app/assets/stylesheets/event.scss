@@ -60,7 +60,7 @@
 /*-------RIZIN------------*/
 
 
-.ribbon-r {
+.ribbon-rz {
   display: inline-block;
   position: absolute;
   padding: 7px 0;
@@ -78,7 +78,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.ribbon-r:before, .ribbon-r:after {
+.ribbon-rz:before, .ribbon-rz:after {
   position: absolute;
   content: "";
   border-top: 4px solid #8c000b;
@@ -87,11 +87,11 @@
   bottom: -4px;
 }
 
-.ribbon-r:before {
+.ribbon-rz:before {
   left: 19px;
 }
 
-.ribbon-r:after {
+.ribbon-rz:after {
   right: 13px;
 }
 
@@ -149,7 +149,7 @@
 /*-------k-1終わり------------*/
 /*-------rise------------*/
 
-.ribbon-r {
+.ribbon-rs {
   display: inline-block;
   position: absolute;
   padding: 7px 0;
@@ -167,7 +167,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.ribbon-r:before, .ribbon-r:after {
+.ribbon-rs:before, .ribbon-rs:after {
   position: absolute;
   content: "";
   border-top: 4px solid #919191;
@@ -176,11 +176,11 @@
   bottom: -4px;
 }
 
-.ribbon-r:before {
+.ribbon-rs:before {
   left: 19px;
 }
 
-.ribbon-r:after {
+.ribbon-rs:after {
   right: 13px;
 }
 
