@@ -229,6 +229,7 @@ table.top-ranking th,td {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14);
 }
 
+/*サイドバー始まり*/
 
 .sidebar {
   width: 300px;
@@ -268,6 +269,16 @@ margin-bottom: 5px;
   text-align: center;
 }
 
+.gekireishow-logo-position {
+  text-align: center;
+}
+
+.gekireishow-logo img {
+  width: 280px;
+}
+
+
+/*サイドバー終わり*/
 
 footer {
   height: 50px;
@@ -529,18 +540,7 @@ footer {
     background: none;
   }
   
-  .background-image::before {
-    content:"";
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-    width:100%;
-    height:100vh;
-    background:url("/P9230027.JPG") center no-repeat;
-    background-size:cover;
-  }
+
 }
 
 
