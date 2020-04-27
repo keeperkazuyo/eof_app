@@ -123,12 +123,12 @@
 
     <div class="fixed-btn">
       <div class="sns-btn">
-        <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{full_title(yield(:title))}", title: 'Twitter', target: '_blank' do %>
+        <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{yield(:title)}", title: 'Twitter', target: '_blank' do %>
         <span class="fa fa-twitter"></span>
         <% end %>
       </div>
       <div class="sns-btn">
-      <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{full_title(yield(:title))}", title: 'LINE', target: '_blank' do %>
+      <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{yield(:title)}", title: 'LINE', target: '_blank' do %>
         <p>LINE</p>
         <% end %>
       </div>
