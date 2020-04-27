@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>FIST CLUB（フィストクラブ）|格闘技ファンサイト</title>
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="総合格闘技やキックボクシングなどの勝敗を予想しよう！ランキングで上位を目指そう！" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
@@ -123,12 +123,12 @@
 
     <div class="fixed-btn">
       <div class="sns-btn">
-        <%= link_to "https://twitter.com/share?url=#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'Twitter', target: '_blank' do %>
+        <%= link_to "https://twitter.com/share?url=#{request.url}&text=#{full_title(yield(:title))}", title: 'Twitter', target: '_blank' do %>
         <span class="fa fa-twitter"></span>
         <% end %>
       </div>
       <div class="sns-btn">
-      <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=FIST CLUB（フィストクラブ）-格闘技ファンサイト-", title: 'LINE', target: '_blank' do %>
+      <%= link_to "http://line.me/R/msg/text/?#{request.url}&text=#{full_title(yield(:title))}", title: 'LINE', target: '_blank' do %>
         <p>LINE</p>
         <% end %>
       </div>

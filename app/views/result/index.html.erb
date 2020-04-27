@@ -1,4 +1,5 @@
 <div class="main">
+    <% provide(:title, "試合結果" ) %>
     <h1>試合結果</h1>
     <% @results.each do |result| %>
     <%= link_to("/result/#{result.event_type}/#{result.event_name}") do %>

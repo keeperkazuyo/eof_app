@@ -1,4 +1,5 @@
 <div class="main">
+    <% provide(:title, "ニュース一覧" ) %>
     <h1>ニュース</h1>
     <% @news.each do |news| %>
         <%= link_to("/news/#{news.posting_time}") do %>

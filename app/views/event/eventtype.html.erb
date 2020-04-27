@@ -1,4 +1,5 @@
 <div class="main">
+    <% provide(:title, @event.event_type ) %>
     <h1><%= @event.event_type.upcase %></h1>
     <% @events.each do |event| %>
         <div class="event-contents">

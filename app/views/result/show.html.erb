@@ -1,4 +1,5 @@
 <div class="main">
+    <% provide(:title, "#{@result.event_name}試合結果") %>
     <% if @result.event_type == "rizin" %>
         <h2><%= @result.event_name.upcase.gsub(/-/,'.') %></h2>
     <% else %>

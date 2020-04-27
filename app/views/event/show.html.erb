@@ -1,4 +1,5 @@
 <div class="main">
+    <% provide(:title, "#{@event.event_name}応援ページ") %>
     <% if @event.event_type == "rizin" %>
         <h2><%= @event.event_name.upcase.gsub(/-/,'.') %></h2>
     <% else %>

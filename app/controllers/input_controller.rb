@@ -16,6 +16,7 @@ class InputController < ApplicationController
                            fighter_b: params[:fighter_b])
     if @new_event.save
       flash[:notice] = "登録完了！"
+      @event_type = params[:event_type]
       @event_name = params[:event_name]
       @event_date = params[:event_date]
       @event_place = params[:event_place]
@@ -23,6 +24,7 @@ class InputController < ApplicationController
       render("input/event")
     else
       flash[:alert] = "未入力があるよ"
+      @event_type = params[:event_type]
       @event_name = params[:event_name]
       @event_date = params[:event_date]
       @event_place = params[:event_place]
