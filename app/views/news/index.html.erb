@@ -1,6 +1,7 @@
 <div class="main">
-    <% provide(:title, "ニュース一覧" ) %>
-    <h1>ニュース</h1>
+    <% provide(:title, "記事一覧" ) %>
+    <h1>管理人のブログ</h1>
+    <p>最新ニュースだったり、格闘技に関するブログ書いてます</p>
     <% @news.each do |news| %>
         <%= link_to("/news/#{news.posting_time}") do %>
             <div class="event-contents">
